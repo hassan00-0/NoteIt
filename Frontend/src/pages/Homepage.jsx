@@ -13,7 +13,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/notes");
+        const res = await axios.get("/api/notes");
         setNotes(res.data);
         setIsRatelimited(false);
       } catch (error) {

@@ -9,7 +9,7 @@ const NoteCard = ({ note, setNotes }) => {
     e.preventDefault();
     if (!window.confirm("Are you sure you want to delete this note?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      await axios.delete(`/api/notes/${id}`);
       setNotes((prev) => prev.filter((note) => note._id !== id));
       toast.success("Note deleted sucessfully!");
     } catch {

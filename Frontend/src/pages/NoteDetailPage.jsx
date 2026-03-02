@@ -13,7 +13,7 @@ const NoteDetailPage = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/notes/${id}`);
+        const res = await axios.get(`/api/notes/${id}`);
         setNotes(res.data);
       } catch {
         toast.error("failed to load Notes!");
@@ -36,7 +36,7 @@ const NoteDetailPage = () => {
   const handleDelete = async () => {
     if (!window.confirm("Are you sure you want to delete this note?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/notes/${id}`);
+      await axios.delete(`/api/notes/${id}`);
       toast.success("Note deleted");
       navigate("/");
     } catch {
@@ -50,7 +50,7 @@ const NoteDetailPage = () => {
     }
     setSave(true);
     try {
-      await axios.put(`http://localhost:5000/api/notes/${id}`, notes);
+      await axios.put(`/api/notes/${id}`, notes);
       toast.success("Note updated successfully");
       navigate("/");
     } catch {

@@ -15,7 +15,7 @@ const CreatePage = () => {
         toast.error("All fields are required!");
       }
       setIsLoading(true);
-      await axios.post("http://localhost:5000/api/notes", {
+      await axios.post("/api/notes", {
         title,
         content,
       });
