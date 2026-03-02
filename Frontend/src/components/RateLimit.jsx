@@ -1,0 +1,26 @@
+import { ZapIcon } from "lucide-react";
+const RateLimit = () => {
+  return (
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      <div className="bg-primary/10 border border-primary/30 rounded-lg">
+        <div className="flex flex-col md:flex-row items-center justify-center p-6">
+          <div className="flex-shrink-0 bg-primary/20 rounded-full p-4 mb-4 md:mb-0 md:mr-6">
+            <ZapIcon className="size-10 text-primary" />
+          </div>
+          <div className="flex-1 text-center md:text-left">
+            <h3 className="font-bold text-xl">Rate Limit Reached</h3>
+            <p className="text-base-content">
+              You've made too many requests in a short period. Please wait a
+              moment.
+            </p>
+            <p className="text-sm text-base-content/70">
+              Try again in a few seconds for the best experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default RateLimit;
